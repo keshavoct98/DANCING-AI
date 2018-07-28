@@ -1,1 +1,1 @@
-# pose-detection-in-videos
+# pose_estimation_videos
