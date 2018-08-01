@@ -13,7 +13,9 @@ The Dancing AI Project includes:-
  4. Providing final dataframe as input to the **LSTM** network(pred.ipynb) using **audio time series as features** and **pose-detection coordinates as labels** and predicting new coordinates using audio time series test-set as input to LSTM model.
  
  5. Using predicted coordinates to generate dance steps using video_generator.ipynb and writing generated frames in final video using **OpenCV VideoWriter**. 
+ 
  *Take a look at my dancing AI*_![.](https://github.com/keshavoct98/Dancing-AI/blob/master/final.gif)
+ **You can check the full video [here!](https://www.facebook.com/100003539988329/videos/1637938143000836/?id=100003539988329)
  
  ### Refrences:
  1. [OpenPoseCV](https://www.learnopencv.com/deep-learning-based-human-pose-estimation-using-opencv-cpp-python/)
