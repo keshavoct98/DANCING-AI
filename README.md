@@ -1,6 +1,6 @@
 # Dancing AI(Teaching an AI to Dance)
-The project works on teaching an AI to create his own dance steps, if given an audio file as the input. I used **OpenCV and librosa** to work with the video and audio files and **keras LSTM** networks to train the AI.
- This project is inspired from the Siraj Raval's '#InMyFeelings' AI challenge. You can check the video [here](https://www.youtube.com/watch?v=prswDGGmYaE&feature=youtu.be).
+This project is all about teaching an AI to create it's own dance steps on getting an audio file as the input. I have used **OpenCV and librosa** to work with the video and audio files and **keras LSTM** networks to train the AI.
+ This project has been inspired from the Siraj Raval's '#InMyFeelings' AI challenge. You can check the video [here](https://www.youtube.com/watch?v=prswDGGmYaE&feature=youtu.be).
 
 The Dancing AI Project includes:-
 
