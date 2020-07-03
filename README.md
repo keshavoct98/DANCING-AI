@@ -5,7 +5,12 @@
 4. Display output video by joining predicted coordinates to form a dancing human stick figure.
 
 ### Requirements
-#To-do
+&nbsp;&nbsp; keras==2.3.1 </br>
+&nbsp;&nbsp; librosa==0.7.2 </br>
+&nbsp;&nbsp; moviepy==1.0.1 </br>
+&nbsp;&nbsp; opencv-python==4.2.0.34 </br>
+&nbsp;&nbsp; pytube3==9.6.4 </br>
+&nbsp;&nbsp; tensorflow==2.2.0 </br>
 
 ### Training/Demo
 1. Run **get_data.py** to download videos and audios to data folder. You can add youtube videos links to "video_links.txt" file for downloading. Alternatively you can copy videos(In '.mp4' format) and audios(In '.wav' format) directly to the data folder.
