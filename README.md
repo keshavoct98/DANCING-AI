@@ -21,7 +21,9 @@
  &nbsp;&nbsp; #Note - If the gpu-ram is 3 GB or less, Reduce memory-limit in this [line](https://github.com/keshavoct98/DANCING-AI/blob/23d12312bb8f9c03fcd3e28ba4217cd0e7c38d52/train.py#L9) to a value less than your gpu-ram.
  
  ### Pose estimation using openpose
- #To-do
+ <p> <img src="https://github.com/keshavoct98/DANCING-AI/blob/master/outputs/pose1.gif" width="98.4%" height="100%"/>
+ <img src="https://github.com/keshavoct98/DANCING-AI/blob/master/outputs/pose0.gif" width="49%" height="50%"/> 
+ <img src="https://github.com/keshavoct98/DANCING-AI/blob/master/outputs/pose2.gif" width="49%" height="50%"/> </p>
  
  ### Predictions
  #To-do
