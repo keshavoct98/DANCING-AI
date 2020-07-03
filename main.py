@@ -1,4 +1,3 @@
-# Importing the required libraries
 import os
 import pandas as pd
 from processVideo import video
@@ -16,12 +15,15 @@ def main(_argv):
     csv_xpath = 'data/'+tail.split('.')[0]+'X.csv'
     csv_ypath = 'data/'+tail.split('.')[0]+'Y.csv' 
     if os.path.isfile(csv_xpath) and os.path.isfile(csv_ypath):
+        ''' If coordinates of a video are saved in the csv file, pose estimation part is skipped and 
+            lstm is directly trained on the inputs from csv file.'''
         X, Y = pd.read_csv(csv_xpath, header = None), pd.read_csv(csv_ypath, header = None)
         X, Y = X.values, Y.values
     else:
-        X, Y = video(FLAGS.video, FLAGS.audio)
+        X, Y = video(FLAGS.video, FLAGS.audio) # Returns extracted pose coordinates from video and tempogram of audio passed.
         pd.DataFrame(X).to_csv(csv_xpath, header = None, index = None)
         pd.DataFrame(Y).to_csv(csv_ypath, header = None, index = None)
+        
     predictions = train(X, Y)
     displayResults(predictions, FLAGS.background)
     print('video saved at "output/output.avi"')

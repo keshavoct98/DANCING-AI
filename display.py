@@ -3,10 +3,12 @@ import time
 import statistics
 POSE_PAIRS = [ [1,2],[1,5],[2,3],[3,4],[5,6],[6,7],[2,8],[8,9],[9,10],[5,11],[11,12],[12,13],[8,11]]
 
-def distance(point_a, point_b):
+def distance(point_a, point_b): # Calculates distance between two points.
     return (((point_a[0] - point_b[0])**2 + (point_a[1] - point_b[1])**2)**0.5)
 
 def check_outliers(points):
+    ''' Returns True if outliers are present in the passed list of
+    coordinates, otherwise returns false.'''
     lengths = []
     for pair in POSE_PAIRS:
         partA, partB = pair[0], pair[1]
@@ -18,6 +20,9 @@ def check_outliers(points):
     return False
     
 def displayResults(predictions, background_path):
+    ''' Returns video of human-stick figure dancing. Figures are created
+    using predicted pose coordinates. prdictions with outliers are 
+    removed. Figure is drawn over a background image.'''
     img = cv2.imread(background_path)
     
     vid_writer = cv2.VideoWriter('outputs/output.avi', cv2.VideoWriter_fourcc('M','J','P','G'), 5, (700,480))

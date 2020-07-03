@@ -1,10 +1,14 @@
 from pytube import YouTube
 import moviepy.editor as mp
 
+# Reading video links from "video_links.txt" file
 with open('data/video_links.txt') as f:
     links = f.readlines()
     links = [x.strip() for x in links]
 
+''' Downloads videos from given links in "mp4" format and "480p" resolution.
+Audio is extracted in "wav" format by converting mp4 video to audio.
+All videos, audios are stored in "data" folder.'''
 for i in range(0, len(links)):
     yt_obj = YouTube(links[i])
     

@@ -8,9 +8,14 @@ protoFile = "models/pose_deploy_linevec.prototxt"
 weightsFile = "models/pose_iter_440000.caffemodel"
 net = cv2.dnn.readNetFromCaffe(protoFile, weightsFile)
 inWidth, inHeight, threshold = 256, 256, 0.3
+
 POSE_PAIRS = [ [1,0],[1,2],[1,5],[2,3],[3,4],[5,6],[6,7],[1,8],[8,9],[9,10],[1,11],[11,12],[12,13]]
 
 def XY(df, audio_input):
+    ''' Missing values in pose coordinates are replaced using forward and 
+    backward filling method. Rows left with missing values after applying these methods
+    are deleted. Last few rows are dropped to match lengths of X and Y.
+    '''
     min_length = min(audio_input.shape[0], df.shape[0])
     X = audio_input[:min_length, :]
     Y = df.iloc[:min_length, :]
@@ -27,6 +32,8 @@ def XY(df, audio_input):
     return X, Y
 
 def video(vid_path, aud_path):
+    ''' Displays estimated pose in the video frames. Returns pose coordinates
+    and audio tempogram in X and Y array.'''
     cap = cv2.VideoCapture(vid_path)
     hasFrame, frame = cap.read()
     frameWidth, frameHeight = frame.shape[1], frame.shape[0]

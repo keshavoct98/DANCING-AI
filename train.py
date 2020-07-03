@@ -6,9 +6,10 @@ from sklearn.preprocessing import MinMaxScaler
 import tensorflow as tf
 gpus = tf.config.experimental.list_physical_devices('GPU')
 tf.config.experimental.set_virtual_device_configuration(gpus[0],
-    [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=2048)]) # limits gpu memory usage
+    [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=3072)]) # limits gpu memory usage
 
 def preprocess(X, Y):
+    ''' Scaling and Train-test split of data.'''
     test_data = X.shape[0] - int(X.shape[0]/20)
     X_train = X[:test_data, :]
     Y_train = Y[:test_data, :]
@@ -27,6 +28,8 @@ def preprocess(X, Y):
     return X_train, X_test, Y_train, Y_test, scaler
 
 def train(X, Y):
+    ''' Splits data into train-test, trains lstm on training split
+    and returns predictions on test data.'''
     X_train, X_test, Y_train, Y_test, scaler = preprocess(X, Y)
     
     keras.backend.clear_session()
