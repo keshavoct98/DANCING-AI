@@ -26,7 +26,9 @@
  <img src="https://github.com/keshavoct98/DANCING-AI/blob/master/outputs/pose2.gif" width="49%" height="50%"/> </p>
  
  ### Predictions
- #To-do
+ <p> <img src="https://github.com/keshavoct98/DANCING-AI/blob/master/outputs/output1.gif" width="98.4%" height="100%"/>
+ <img src="https://github.com/keshavoct98/DANCING-AI/blob/master/outputs/output0.gif" width="49%" height="50%"/> 
+ <img src="https://github.com/keshavoct98/DANCING-AI/blob/master/outputs/output2.gif" width="49%" height="50%"/> </p>
  
  ### References
  1. https://github.com/CMU-Perceptual-Computing-Lab/openpose
