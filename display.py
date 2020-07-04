@@ -21,13 +21,13 @@ def check_outliers(points):
     
 def displayResults(predictions, background_path):
     ''' Returns video of human-stick figure dancing. Figures are created
-    using predicted pose coordinates. prdictions with outliers are 
+    by joining predicted pose coordinates. prdictions with outliers are 
     removed. Figure is drawn over a background image.'''
-    img = cv2.imread(background_path)
     
+    img = cv2.imread(background_path)
     vid_writer = cv2.VideoWriter('outputs/output.avi', cv2.VideoWriter_fourcc('M','J','P','G'), 5, (700,480))
     for k in range(predictions.shape[0]):
-        time.sleep(0.15)
+        time.sleep(0.18)
         frame = img.copy()
         
         points = []

@@ -10,7 +10,8 @@ tf.config.experimental.set_virtual_device_configuration(gpus[0],
 
 def preprocess(X, Y):
     ''' Scaling and Train-test split of data.'''
-    test_data = X.shape[0] - int(X.shape[0]/20)
+    
+    test_data = X.shape[0] - int(X.shape[0]/20) # 5% data is used for predictions
     X_train = X[:test_data, :]
     Y_train = Y[:test_data, :]
     X_test = X[test_data:, :]
@@ -27,9 +28,11 @@ def preprocess(X, Y):
     
     return X_train, X_test, Y_train, Y_test, scaler
 
+
 def train(X, Y):
     ''' Splits data into train-test, trains lstm on training split
-    and returns predictions on test data.'''
+    and return predictions on test data.'''
+    
     X_train, X_test, Y_train, Y_test, scaler = preprocess(X, Y)
     
     keras.backend.clear_session()
@@ -42,4 +45,3 @@ def train(X, Y):
     model.fit(X_train, Y_train, batch_size = 16, epochs = 400)
     
     return scaler.inverse_transform(model.predict(X_test))
-

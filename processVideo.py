@@ -32,8 +32,8 @@ def XY(df, audio_input):
     return X, Y
 
 def video(vid_path, aud_path):
-    ''' Displays estimated pose in the video frames. Returns pose coordinates
-    and audio tempogram in X and Y array.'''
+    ''' Displays video with estimated pose. Returns pose coordinates
+    and audio tempogram as numpy array.'''
     cap = cv2.VideoCapture(vid_path)
     hasFrame, frame = cap.read()
     frameWidth, frameHeight = frame.shape[1], frame.shape[0]
