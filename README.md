@@ -31,8 +31,9 @@
  <img src="https://github.com/keshavoct98/DANCING-AI/blob/master/outputs/output2.gif" width="49%" height="50%"/> </p>
  
  ### References
- 1. https://github.com/CMU-Perceptual-Computing-Lab/openpose
- 2. https://python-pytube.readthedocs.io/en/latest/
- 3. https://zulko.github.io/moviepy/
- 4. https://librosa.org/librosa/
- 5. https://www.youtube.com/channel/UCX9y7I0jT4Q5pwYvNrcHI_Q 
+ 1. https://www.learnopencv.com/deep-learning-based-human-pose-estimation-using-opencv-cpp-python/
+ 2. https://github.com/CMU-Perceptual-Computing-Lab/openpose
+ 3. https://python-pytube.readthedocs.io/en/latest/
+ 4. https://zulko.github.io/moviepy/
+ 5. https://librosa.org/librosa/
+ 6. https://www.youtube.com/channel/UCX9y7I0jT4Q5pwYvNrcHI_Q 
