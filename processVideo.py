@@ -13,7 +13,7 @@ POSE_PAIRS = [ [1,0],[1,2],[1,5],[2,3],[3,4],[5,6],[6,7],[1,8],[8,9],[9,10],[1,1
 
 def XY(df, audio_input):
     ''' Missing values in pose coordinates are replaced using forward and 
-    backward filling method. Rows left with missing values after applying these methods
+    backward filling method. Rows left with missing values after applying mentioned methods
     are deleted. Last few rows are dropped to match lengths of X and Y.
     '''
     min_length = min(audio_input.shape[0], df.shape[0])
