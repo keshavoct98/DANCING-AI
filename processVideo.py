@@ -87,6 +87,6 @@ def video(vid_path, aud_path):
     cv2.destroyAllWindows()
     print()
     y, sr = librosa.load(aud_path)
-    audio_input = np.transpose(librosa.feature.tempogram(y, sr, hop_length = int(sr/fps), win_length = 36))
+    audio_input = np.transpose(librosa.feature.tempogram(y=y, sr=sr, hop_length = int(sr/fps), win_length = 36))
 
     return XY(df, audio_input)
