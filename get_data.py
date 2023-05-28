@@ -1,24 +1,22 @@
-from pytube import YouTube
+import glob
 import moviepy.editor as mp
+from yt_dlp import YoutubeDL
 
 # Reading video links from "video_links.txt" file
 with open('data/video_links.txt') as f:
     links = f.readlines()
     links = [x.strip() for x in links]
 
-'''Downloads videos from given links in "mp4" format and "480p" resolution.
+'''Download videos from given youtube urls with "480p" resolution.
 Audio is extracted by converting downloaded videos to "wav" format.
 All videos, audios are stored in "data" folder.'''
-for i in range(0, len(links)):
-    yt_obj = YouTube(links[i])
-    
-    print('\nAudio-'+str(i))
-    audio = yt_obj.streams.filter().first()
-    audio.download(filename=str(i), output_path='data/')
+with YoutubeDL({'height': 480, 'paths': {'home': './data/'}}) as ydl:
+    ydl.download(links)
 
-    video = mp.VideoFileClip('data/'+str(i)+'.mp4')
-    video.audio.write_audiofile('data/'+str(i)+'.wav')  
-    
-    print('\nVideo-'+str(i))
-    video = yt_obj.streams.filter(resolution='480p', mime_type="video/mp4").first()
-    video.download(filename=str(i), output_path='data/')
+types = ('data/*.webm', 'data/*.mkv', 'data/*.mp4', 'data/*.avi') # the tuple of file types
+videos = []
+for files in types:
+    videos.extend(glob.glob(files))
+for vid_path in videos:
+    video = mp.VideoFileClip(vid_path)
+    video.audio.write_audiofile('.'.join(vid_path.split('.')[:-1])+'.wav')  
