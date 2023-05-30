@@ -9,7 +9,7 @@ from absl.flags import FLAGS
 flags.DEFINE_string('video', 'data/0.mp4', 'Input video path')
 flags.DEFINE_string('audio', 'data/0.wav', 'Input video path')
 flags.DEFINE_string('background', 'inputs/background0.jpg', 'path to background image')
-flags.DEFINE_bool('display_pose', False, 'Display human pose on input video')
+flags.DEFINE_bool('display', False, 'Display human pose on input video')
 
 def main(_argv):
     
@@ -22,13 +22,13 @@ def main(_argv):
         X, Y = pd.read_csv(csv_xpath, header = None), pd.read_csv(csv_ypath, header = None)
         X, Y = X.values, Y.values
     else:
-        X, Y = video(FLAGS.video, FLAGS.audio, FLAGS.display_pose) # Returns pose estimation coordinates of video and tempogram of input audio.
+        X, Y = video(FLAGS.video, FLAGS.audio, FLAGS.display) # Returns pose estimation coordinates of video and tempogram of input audio.
         pd.DataFrame(X).to_csv(csv_xpath, header = None, index = None)
         pd.DataFrame(Y).to_csv(csv_ypath, header = None, index = None)
         
     predictions = train(X, Y) # Split data, train lstm and return predictions.
-    displayResults(predictions, FLAGS.background) # display and save output video
-    print('video saved at "output/output.avi"')
+    displayResults(predictions, FLAGS.background, FLAGS.display) # display and save output video
+    print('video saved at "outputs/output.avi"')
     
 if __name__ == '__main__':
     try:
