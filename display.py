@@ -19,7 +19,7 @@ def check_outliers(points):
             return True
     return False
     
-def displayResults(predictions, background_path):
+def displayResults(predictions, background_path, display):
     ''' Returns video of human-stick figure dancing. Figures are created
     by joining predicted pose coordinates. prdictions with outliers are 
     removed. Figure is drawn over a background image.'''
@@ -46,10 +46,11 @@ def displayResults(predictions, background_path):
         cv2.circle(frame, (x1, y), 5, (0, 0, 150), thickness=-1, lineType=cv2.FILLED)
         cv2.circle(frame, (x2, y), 5, (0, 0, 150), thickness=-1, lineType=cv2.FILLED)
         
-        cv2.imshow('Output-Skeleton', frame)
         vid_writer.write(frame)
-        if cv2.waitKey(1) == 27:
-            break
+        if display:
+          cv2.imshow('Output-Skeleton', frame)
+          if cv2.waitKey(1) == 27:
+              break
 
     cv2.destroyAllWindows()
     vid_writer.release()
