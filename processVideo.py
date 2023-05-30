@@ -81,8 +81,9 @@ def video(vid_path, aud_path):
 
         cv2.putText(frame, "time taken = {:.2f} sec".format(time.time() - t), (50, 50), 
                     cv2.FONT_HERSHEY_COMPLEX, .8, (255, 50, 0), 2, lineType=cv2.LINE_AA)
-        cv2.imshow('Output-Skeleton', frame)
-        if cv2.waitKey(1) == 27: break
+        if disp_pose:
+          cv2.imshow('Output-Skeleton', frame)
+          if cv2.waitKey(1) == 27: break
     
     cv2.destroyAllWindows()
     print()
