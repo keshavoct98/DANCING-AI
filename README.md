@@ -5,19 +5,20 @@
 4. Display output videos by joining predicted coordinates to generate dancing human stick figures.
 
 ### Requirements
-&nbsp;&nbsp; keras==2.3.1 </br>
-&nbsp;&nbsp; librosa==0.7.2 </br>
-&nbsp;&nbsp; moviepy==1.0.1 </br>
-&nbsp;&nbsp; opencv-python==4.2.0.34 </br>
-&nbsp;&nbsp; pytube3==9.6.4 </br>
-&nbsp;&nbsp; tensorflow==2.2.0 </br>
+&nbsp;&nbsp; opencv-contrib-python==4.7.0.72 </br>
+&nbsp;&nbsp; pandas==2.0.1 </br>
+&nbsp;&nbsp; librosa==0.10.0.post2 </br>
+&nbsp;&nbsp; moviepy==1.0.3 </br>
+&nbsp;&nbsp; yt-dlp==2023.3.4 </br>
+&nbsp;&nbsp; tensorflow==2.12.0 </br>
+&nbsp;&nbsp; keras==2.12.0 </br>
 
-### Training/Demo
+### Training/Demo [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/16UDqDqMe7OcjTP_vxGlT8WAwesrjQmOP?usp=sharing)
 1. Run get_data.py to download videos and audios to data folder. You can add youtube videos links to "video_links.txt" file for downloading. Alternatively you can copy videos( '.mp4' format ) and audios( '.wav' format ) directly to the data folder.
-2. Download pretrained weights for pose estimation from [here](https://www.kaggle.com/changethetuneman/openpose-model). Download pose_iter_440000.caffemodel and save it in "models" folder.
+2. Download pretrained weights for pose estimation from [here](https://drive.google.com/uc?id=1AMWojcaRM6IF1iouN7ll595CXe_e3vsc). Download pose_iter_440000.caffemodel and save it in "models" folder.
 2. Run main.py to train lstm and display predicted dance video.
-<pre><code> python main.py --video "path to input video" --audio "path to input audio" --background "path to background image"
- Example - python main.py --video data/0.mp4 --audio data/0.wav --background inputs/bg0.jpg </code></pre>
+<pre><code> python main.py --video "path to input video" --audio "path to input audio" --background "path to background image" --display_pose
+ Example - python main.py --video data/0.mp4 --audio data/0.wav --background inputs/bg0.jpg --display_pose</code></pre>
  &nbsp;&nbsp; #Note - If the gpu-ram is 3 GB or less, Reduce memory-limit in this [line](https://github.com/keshavoct98/DANCING-AI/blob/23d12312bb8f9c03fcd3e28ba4217cd0e7c38d52/train.py#L9) to a value less than your gpu-ram.
  
  ### Pose estimation using openpose
