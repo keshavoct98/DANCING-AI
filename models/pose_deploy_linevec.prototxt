@@ -690,7 +690,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 28
+    num_output: 38
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -716,7 +716,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 16
+    num_output: 19
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -1137,7 +1137,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 28
+    num_output: 38
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -1163,7 +1163,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 16
+    num_output: 19
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -1584,7 +1584,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 28
+    num_output: 38
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -1610,7 +1610,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 16
+    num_output: 19
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -2031,7 +2031,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 28
+    num_output: 38
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -2057,7 +2057,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 16
+    num_output: 19
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -2478,7 +2478,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 28
+    num_output: 38
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -2504,7 +2504,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 16
+    num_output: 19
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -2925,7 +2925,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 28
+    num_output: 38
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -2951,7 +2951,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 16
+    num_output: 19
     pad: 0
     kernel_size: 1
     weight_filler {
@@ -2968,6 +2968,7 @@ layer {
   type: "Concat"
   bottom: "Mconv7_stage6_L2"
   bottom: "Mconv7_stage6_L1"
+  # top: "concat_stage7"
   top: "net_output"
   concat_param {
     axis: 1
