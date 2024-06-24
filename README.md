@@ -1,5 +1,5 @@
 # DANCING-AI
-1. Extraction of pose coordinates from dance videos using openpose human pose estimation.
+1. Extraction of pose coordinates from dance videos using openpose implementation of human pose estimation.
 2. Training LSTM network on extracted coordinates using songs as input and coordinates as output.
 3. Trained lstm is used to predict dance coordinates for the remaining song( 95% of the audio is used for training and remaining 5% for predictions ).
 4. Display output videos by joining predicted coordinates to generate dancing human stick figures.
